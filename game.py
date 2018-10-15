@@ -2,19 +2,19 @@ from board import Board
 from player import Player
 
 class Game:
-    def __init__(self):
+    def __init__(self,players,board):
         self.players = players
         self.board = board
         
     def play_game(self):
         pass
     
-    def get_player_choice(self):
-        pass
     
-class 
-        
+    
+def main():
+    pass
         
     
 if __name__== "__main__":
+    main()
     pass
