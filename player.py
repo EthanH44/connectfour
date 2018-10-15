@@ -1,17 +1,20 @@
+from board import Board
+
 class Player:
-    def __init__(self):
-        self.name = name
-        self.choice = choice
-        self.turn = 0
+    def __init__(self,piece):
+        self.name = self.get_name()
+        self.piece = piece
         
     def get_name(self):
-        name1 = input("What is the name of your player: ")
-        
-        
+        name = input("What is the name of your player: ")
     
-    def get_choice(Board):
-        pass
-            
-        
+    def get_choice(self, board):
+        choice = input("What column would you like to place your piece: ")
+        return choice
     
-    
+def main():
+    E = Player()
+    E.get_name()
+ 
+if __name__== "__main__":
+    main()
