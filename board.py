@@ -13,12 +13,13 @@ class Board:
         
         
     def add_piece(self,col,piece):
-        for i in range(self.width):
-            col-1 = piece
-            
-        
-                                                         
-        pass
+        for row in range(self.height -1,-1,-1):
+            if self.board[row][col-1]== '1':
+                self.board[row][col-1] = piece
+                break
+        else:
+            raise ValueError('column full')
+                
         
     def empty_board(self):
         print(self.board)
@@ -46,8 +47,10 @@ class Board:
         
 def main():
     b=Board(5,5)
+    b.add_piece(2,'*')
     b.disp_board()
-    b.add_piece
+    b.add_piece(2,'*')
+    b.disp_board()
 
 if __name__ == "__main__":
     main()
