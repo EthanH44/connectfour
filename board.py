@@ -22,11 +22,19 @@ class Board:
                 
         
     def empty_board(self):
-        print(self.board)
+        self.board = [['1']*self.width for i in range(self.height)]
     
             
     
     def disp_board(self):
+        c=[]
+        for x in range(self.width):
+            c.append(x+1)
+        for y in range(len(c)):
+            print(c[y],end =' ')
+        print(' ')
+            
+    
         for i in range(self.width):
             for j in range (self.height):
                 print(self.board[i][j], end=' ')
@@ -35,10 +43,10 @@ class Board:
     def is_full(self):
         for i in range(self.width):
             for j in range (self.height):
-                if self.board[i][j] == ' ':
+                if self.board[i][j] == '1':
                     break
-        else:
-            raise ValueError("Board is full. Tie!")
+            else:
+                raise ValueError("Board is full. Tie!")
                     
                     
     def check_winner(self):
@@ -49,7 +57,7 @@ def main():
     b=Board(5,5)
     b.add_piece(2,'*')
     b.disp_board()
-    b.add_piece(2,'*')
+    b.is_full()
     b.disp_board()
 
 if __name__ == "__main__":
