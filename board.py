@@ -37,7 +37,7 @@ class Board:
                 if self.board[i][j] == ' ':
                     break
         else:
-            return "Board is full. Tie!"
+            raise ValueError("Board is full. Tie!")
                     
                     
     def check_winner(self):
