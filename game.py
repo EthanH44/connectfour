@@ -4,22 +4,27 @@ from player import Player
 class Game:
     def __init__(self,players,board,turn):
         self.players = []
-        self.board = Board()
+        self.board = Board(7,6)
         self.turn = 0
         
     def play_game(self):
-        p1 = Player().get_name()
-        self.players.append(p1)
-        p2 = Player().get_name()
-        self.players.append(p2)
-        Board().disp_board()
+        
+        self.players.append(Player('x'))
+        self.players.append(Player('y'))
+        self.board.disp_board()
         while True:
             try:
-                Player().get_choice(name)
-                Board().add_piece(choice)
-                Board().disp_board()
-                Board().is_full()
-                Board().check_winner()
+                self.players[turn].get_choice(self.players[turn].name)
+                self.board.add_piece(choice,self.players[turn])
+                self.board.disp_board()
+                if self.board.is_full() == True:
+                    raise ValueError("Board is full!")
+                else:
+                    
+                self.board.check_winner()
+            except:
+                raise ValueError("Did not input correct value.")
+                
                 
             
                 
@@ -30,7 +35,7 @@ class Game:
     
     
 def main():
-    play_game()
+    Game().play_game()
 
 
         

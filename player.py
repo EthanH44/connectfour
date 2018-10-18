@@ -1,15 +1,17 @@
 
 
 class Player:
-    def __init__(self,name):
-        self.name = 'default'
+    def __init__(self,piece):
+        self.piece = piece
+        self.name = self.get_name()
         
     def get_name(self):
         name = input("What is the name of your player: ")
-        
+        return name
     def get_choice(self,name):
         choice = input(f"{name} pick a column")
-        turn = (turn + 1) % 2
+    
+        return choice
     
 def main():
     pass
