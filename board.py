@@ -50,7 +50,16 @@ class Board:
                     
                     
     def check_winner(self):
-        pass
+        #horizontal
+        for i in range(self.height):
+            if self.width % 2 ==1:
+                for u in range(-1,-1,self.width // 2):
+                    
+                    
+        #if self.width % 2 ==0: 
+        for i in range(self.height):
+            for j in (self.width):
+                if self.board[i][j]:
         
         
 def main():
