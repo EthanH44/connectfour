@@ -50,15 +50,34 @@ class Board:
                     
                     
     def check_winner(self):
-        pass
+        for i in range(self.height):
+            for j in range(self.width-3):
+                if self.board[i][j] == self.board[i][j+1]:
+                    if self.board[i][j+2] == self.board[i][j+3]:
+                        if self.board[i][j] != "1":
+                            return True
+                
+                
+        for i in range(self.height-3):
+            for j in range(self.width):
+                if self.board[i][j] == self.board[i+1][j]:
+                    if self.board[i+2][j] == self.board[i+3][j]:
+                        if self.board[i][j] != "1":
+                            return True
+        else:
+            return False
         
+                
+        
+                    
+                        
+            
         
 def main():
     b=Board(5,5)
-    b.add_piece(2,'*')
+    
     b.disp_board()
-    b.is_full()
-    b.disp_board()
+    print(b.check_winner())
 
 if __name__ == "__main__":
     main()
