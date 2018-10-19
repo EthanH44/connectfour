@@ -4,10 +4,12 @@ from player import Player
 class Game:
     def __init__(self,players,board,turn):
         self.players = []
-        self.board = Board(7,6)
+        self.board = Board(6,7)
         self.turn = 0
         
     def play_game(self):
+        print("Welcome to Connect 4!")
+        print("Get four of your pieces in a row to win!")
         
         self.players.append(Player('x'))
         self.players.append(Player('y'))
@@ -19,11 +21,23 @@ class Game:
                 self.board.disp_board()
                 if self.board.is_full() == True:
                     raise ValueError("Board is full!")
-                else:
+                if self.board.is_full() == False:
+                    continue
+                if self.board.check_winner() == True:
+                    print(f"{self.players[turn].name} has won the game!")
                     
-                self.board.check_winner()
+                turn = (turn + 1) % 2
+                
+                
             except:
-                raise ValueError("Did not input correct value.")
+                if self.board.is_full() == True:
+                    raise ValueError("Board is full!")
+                    
+                
+            
+                
+                    
+                
                 
                 
             
@@ -35,8 +49,8 @@ class Game:
     
     
 def main():
-    Game().play_game()
-
+    game = Game()
+    game.Game()
 
         
     
