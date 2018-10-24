@@ -15,23 +15,23 @@ class Game:
         self.players.append(Player('y'))
         self.board.disp_board()
         while True:
-            try:
-                self.players[turn].get_choice(self.players[turn].name)
+            try:   # while
+                self.players[turn].get_choice(self.players[turn].name) # get_choice returns a value
                 self.board.add_piece(choice,self.players[turn])
                 self.board.disp_board()
                 if self.board.is_full() == True:
                     raise ValueError("Board is full!")
-                if self.board.is_full() == False:
-                    continue
+                if self.board.is_full() == False: # unnecessary
+                    continue # breaks your game
                 if self.board.check_winner() == True:
                     print(f"{self.players[turn].name} has won the game!")
-                    
+                    # game keeps going after winner is found
                 turn = (turn + 1) % 2
                 
                 
             except:
-                if self.board.is_full() == True:
-                    raise ValueError("Board is full!")
+                if self.board.is_full() == True:  
+                    raise ValueError("Board is full!")  # ? 
                     
                 
             
